@@ -4,47 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Leined World</title>
-	<style>
-		body {
-			background-color: rgb(255, 255, 255);
-			color: rgb(0, 0, 0);
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		h1 {
-			text-align: center;
-			color: rgb(88, 180, 211);
-		}
-		button {
-			background-color: blueviolet;
-			color: white;
-			border: none;
-			padding: 10px 20px;
-			cursor: pointer;
-			font-size: 16px;
-		}
-		button:hover {
-			background-color: darkviolet;
-		}
-		</style>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<header style="background-color: rgb(88, 180, 211); padding: 20px; text-align: center;">
+	<header>
 		<h1>Leined World</h1>
 	</header>
-	<div style="text-align: left; width: 20%; height: auto; margin: 20px; padding: 20px; background-color: rgb(255, 255, 255); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-	<img src="/assets/fox.jpeg" alt="Leined World" style="display: block; text-align: left; margin: 0 auto; width: 10%; height: auto;">
+
+	<div class="image-container">
+		<img src="/assets/fox.jpeg" alt="Leined World">
 	</div>
-	<p style="text-align: center; font-size: 18px; color: rgb(0, 0, 0);">Welcome to Leined World! Click the button below to initialize.</p>
-	<div style="text-align: right 40px; width: 40%; height: auto; margin-top: 30px; background-color: rgb(181, 191, 247);">
-	<button style="border: 0dvh; font-style: oblique; background-color:blueviolet; text-align: center; cursor: cell;">	
-		Initialize</button>
-	</button>
+
+	<p class="welcome-text">Welcome to Leined World! Click the button below to initialize.</p>
+
+	<div id="button-container">
+		<button id="movingBtn">Initialize</button>
 	</div>
-	<script src="script.js"></script>
-	<footer style="background-color: rgb(204, 49, 189); padding: 20px; cursor:cell; position: fixed; bottom: 0; width: 100%; color: white;">
+
+	<footer>
 		<p>&copy; 2025 Leined World. All rights reserved.</p>
 	</footer>
+
+	<script src="script.js"></script>
 </body>
 </html>

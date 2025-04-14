@@ -1,0 +1,76 @@
+body {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: rgb(88, 180, 211);
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	color: rgb(88, 180, 211);
+}
+
+.image-container {
+	text-align: left;
+	width: 20%;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.welcome-text {
+	text-align: center;
+	font-size: 18px;
+	color: rgb(0, 0, 0);
+}
+
+#button-container {
+	width: 100%;
+	overflow: hidden;
+	padding: 20px;
+	margin-top: 30px;
+	text-align: left;
+	position: relative;
+	height: 60px;
+	background-color: rgb(181, 191, 247);
+}
+
+button {
+	background-color: blueviolet;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	position: relative;
+}
+
+button:hover {
+	background-color: darkviolet;
+}
+
+footer {
+	background-color: rgb(204, 49, 189);
+	padding: 20px;
+	cursor: cell;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
+}
