@@ -1,0 +1,236 @@
+body {
+    background: linear-gradient(135deg, #181a20 0%, #23234f 100%);
+    color: #e0e0f7;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(88, 180, 211);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(88, 180, 211);
+}
+
+.image-container {
+    text-align: left;
+    width: 20%;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+#button-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: left;
+    position: relative;
+    height: 60px;
+    background-color: rgb(181, 191, 247);
+}
+
+button {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+button:hover {
+    background-color: darkviolet;
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0 1em 0;
+    background: #181a20;
+    color: #a5b4fc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer img {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #6366f1;
+    box-shadow: 0 2px 8px #23234f88;
+    margin-top: 1em;
+}
+
+.center {
+    text-align: center;
+}
+
+nav.portfolio-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    background: rgba(40, 40, 80, 0.85);
+    border-radius: 18px;
+    margin: 2em auto;
+    padding: 1em 0;
+    box-shadow: 0 2px 16px #0006;
+    max-width: 900px;
+}
+
+nav.portfolio-menu a {
+    color: #8ecae6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav.portfolio-menu a:hover,
+nav.portfolio-menu a.active {
+    background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%);
+    color: #fff;
+}
+
+.section {
+    background: rgba(36, 37, 70, 0.95);
+    margin: 2em auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #0008;
+    max-width: 900px;
+    padding: 2em;
+}
+
+.section h2 {
+    margin-bottom: 1em;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.badges {
+    margin: 20px 0;
+}
+
+.badges img {
+    margin: 0 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #23234f44;
+    transition: transform 0.2s;
+}
+
+.badges img:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background: rgba(44, 44, 80, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px #23234f44;
+}
+
+th,
+td {
+    padding: 1em;
+    border-bottom: 1px solid #35357a;
+    text-align: center;
+    font-size: 1rem;
+}
+
+th {
+    background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+a {
+    color: #a5b4fc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+ul.contact,
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+
+ul.contact li,
+.contact-list li {
+    margin: 10px 0;
+    background: #23234f;
+    border-radius: 12px;
+    padding: 0.8em 1.2em;
+    color: #e0e0f7;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px #23234f33;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+ul.contact li .icon,
+.contact-list li .icon {
+    font-size: 1.5em;
+    color: #6366f1;
+}
+
+@media (max-width: 700px) {
+    .section {
+        padding: 1em;
+    }
+
+    nav.portfolio-menu {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.95em;
+    }
+
+    .section h2 {
+        font-size: 1.2rem;
+    }
+}

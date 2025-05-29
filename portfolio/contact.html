@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #563edf, #0f398d);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-section {
+            max-width: 400px;
+            margin: 60px auto 0 auto;
+            background: linear-gradient(135deg, #d5d2ff, #5e91f769);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+            padding: 2.5rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+        .contact-section h2 {
+            color: #4b2fc9;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        .contact-list .icon {
+            font-size: 1.5rem;
+            margin-right: 0.7rem;
+        }
+        .contact-list a {
+            color: #9c9ef1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .contact-list a:hover {
+            color: #9ebff1;
+            text-decoration: underline;
+        }
+        small {
+            color: #1d1f9c;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-bar"></div>
+    <section class="contact-section">
+        <h2>📫 Contact Me</h2>
+        <ul class="contact-list">
+            <li>
+                <span class="icon">📧</span>
+                <a href="mailto:danpalac@student.42madrid.com" target="_blank">danpalac@student.42madrid.com</a>
+            </li>
+            <li>
+                <span class="icon">💼</span>
+                <a href="https://www.linkedin.com/in/daniel-palacios-a5a2a4249" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+                <span class="icon">💻</span>
+                <a href="https://www.hackerrank.com/profile/erdanielmarciano" target="_blank">HackerRank</a>
+            </li>
+            <li>
+                <span class="icon">🧠</span>
+                <a href="https://www.codewars.com/users/leined18" target="_blank">CodeWars</a>
+            </li>
+        </ul>
+        <div style="margin-top:1.5rem; font-size: 0.9rem; color: #040536;"> 
+            <small>Referencia: <b>contact.html</b>. Haz clic en cualquier contacto para abrirlo en una nueva pestaña.</small>
+        </div>
+    </section>
+    <script src="/static/js/header.js"></script>
+</body>
+</html>

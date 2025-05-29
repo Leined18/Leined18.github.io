@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas de GitHub</title>
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <style>
+        .center {
+            text-align: center;
+        }
+        .stats img {
+            width: 45%;
+            margin: 10px;
+        }
+        #userForm {
+            margin: 20px 0;
+        }
+        #username {
+            padding: 8px;
+            font-size: 1em;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-bar"></div>
+    <div class="container center">
+        <h1>Estadísticas de GitHub</h1>
+
+        <!-- Formulario para ingresar usuario -->
+        <form id="userForm">
+            <input type="text" id="username" placeholder="Usuario de GitHub" required>
+            <button type="submit">Ver estadísticas</button>
+        </form>
+
+        <!-- Estadísticas de GitHub -->
+        <div class="stats" id="stats">
+            <h2>📊 GitHub Stats</h2>
+            <img id="stats-main" src="https://github-readme-stats.vercel.app/api?username=Leined18&theme=tokyonight&show_icons=true&count_private=true" alt="GitHub stats">
+            <img id="stats-streak" src="https://github-readme-streak-stats.herokuapp.com/?user=Leined18&theme=tokyonight" alt="GitHub streak stats">
+            <img id="stats-langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Leined18&theme=tokyonight&layout=compact" alt="Top languages">
+        </div>
+    </div>
+
+    <script src="/static/js/header.js"></script>
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value.trim();
+
+            if (!username) return;
+
+            // Actualiza las imágenes con el nuevo usuario
+            document.getElementById("stats-main").src =
+                `https://github-readme-stats.vercel.app/api?username=${username}&theme=tokyonight&show_icons=true&count_private=true`;
+
+            document.getElementById("stats-streak").src =
+                `https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=tokyonight`;
+
+            document.getElementById("stats-langs").src =
+                `https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&theme=tokyonight&layout=compact`;
+        });
+    </script>
+</body>
+</html>

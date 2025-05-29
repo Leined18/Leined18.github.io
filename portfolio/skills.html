@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #7678fff5;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #1e2cad;
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            max-width: 600px;
+            margin: 68px auto 0 auto;
+            background: #19115f9f;
+            border-radius: 19px;
+            box-shadow: 0 6px 32px rgba(22, 65, 109, 0.534);
+            padding: 40px 35px 35px 35px;
+        }
+        .section h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 42px;
+            letter-spacing: 3px;
+            color: #4cb0df;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 20px;
+        }
+        td {
+            background: linear-gradient(135deg, #86b3e7, #7560d1bd);
+            border-radius: 13px;
+            padding: 16px 10px 16px 24px;
+            font-size: 1.50em;
+            font-weight: 300;
+            vertical-align: middle;
+            box-shadow: 0 3px 8px rgba(5, 48, 90, 0.377);
+            transition: box-shadow 0.3s;
+            width: 50%;
+            display: inline-flex;
+        }
+        td:hover {
+            box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+            background: #eaf0f7;
+        }
+        i, img {
+            margin-right: 12px;
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+        @media (max-width: 600px) {
+            .section {
+                padding: 20px 8px;
+            }
+            td {
+                font-size: 1em;
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-bar"></div>
+    <section class="section center">
+        <h2>💡 Skills</h2>
+        <table>
+            <tr>
+                <td><i class="fab fa-html5" style="color:#e34c26"></i> HTML5</td>
+                <td><i class="fab fa-css3-alt" style="color:#1572b6"></i> CSS3</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" style="width:1.5em;"> C
+                </td>
+                <td>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="width:1.5em;"> C++
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fab fa-js-square" style="color:#f7df1e"></i> JavaScript</td>
+                <td><i class="fab fa-python" style="color:#3776ab"></i> Python</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <i class="fab fa-git-alt" style="color:#f05032"></i> Git &amp; GitHub
+                </td>
+            </tr>
+        </table>
+    </section>
+    <script src="/static/js/header.js"></script>
+</body>
+
+</html>
