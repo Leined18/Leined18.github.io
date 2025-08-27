@@ -34,7 +34,7 @@ const projects = [
     new Project("🐚 Minishell", "https://github.com/Leined18/minishell", 3, "Completed", 125),
     new Project("🤖 CPP Modules 00-04", "", 4, "In progress", "-"),
     new Project("🖧 NetPractice", "https://github.com/Leined18/Netpractice", 4, "Completed", 100),
-    new Project("🔦 Cube3D", "https://github.com/Leined18/Cube3D", 4, "Pending", "-")
+    new Project("🔦 Cube3D", "https://github.com/Leined18/Cube3D", 4, "Completed", 125)
 ];
 
 // Renderizar en la tabla
