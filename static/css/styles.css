@@ -1,3 +1,35 @@
+/* Estado de los proyectos */
+.completed {
+  color: #387fdb;
+}
+.in-progress {
+  color: #ffc107;
+}
+.pending {
+  color: #d635dc;
+}
+.score {
+  color: #08c017;
+}
+
+/* Tabla */
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.project-table th, .project-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.project-table th {
+  background-color: #f4f4f4;
+}
+.project-table tr:hover {
+  background-color: #f9f9f9;
+}
+
 body {
     background: linear-gradient(135deg, #181a20 0%, #23234f 100%);
     color: #e0e0f7;
@@ -212,6 +244,12 @@ ul.contact li .icon,
 .contact-list li .icon {
     font-size: 1.5em;
     color: #6366f1;
+}
+
+.title {
+    text-align: center;
+    color: rgb(88, 180, 211);
+    margin-bottom: 0.5em;
 }
 
 @media (max-width: 700px) {

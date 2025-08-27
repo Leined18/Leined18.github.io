@@ -1,121 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42 Projects</title>
-    <link href="/static/css/styles.css" rel="stylesheet">
-    <style>
-        .completed {
-            color: #387fdb;
-        }
-        .in-progress {
-            color: #ffc107;
-        }
-        .pending {
-            color: #d635dc;
-        }
-        .project-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .score {
-            color: #08c017;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>42 Projects</title>
+   <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
-    <div id="header-bar"></div>
-    <main>
-        <h1>42 Projects</h1>
-        <p>Estos son los proyectos que he completado en 42:</p>
-        <p>Si quieres ver el código de cada proyecto, haz clic en el nombre del proyecto.</p>
 
-        <!-- Tabla de proyectos -->
-        <div class="project-table-container">
-            <table class="project-table">
-                <tr>
-                    <th>Project</th>
-                    <th>Rank</th>
-                    <th>Status</th>
-                    <th>Score</th>
-                </tr>
-                <tr>
-                    <td>📚 <a href="https://github.com/Leined18/Libft">libft</a></td>
-                    <td>0</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>🖨️ <a href="https://github.com/Leined18/ft_printf">ft_printf</a></td>
-                    <td>1</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">100</td>
-                </tr>
-                <tr>
-                    <td><a>Born2beroot</a></td>
-                    <td>1</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>📜 <a href="https://github.com/Leined18/get_next_line">get_next_line</a></td>
-                    <td>1</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">112</td>
-                </tr>
-                <tr>
-                    <td>🎮 <a href="https://github.com/Leined18/so_long">so_long</a></td>
-                    <td>2</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>↹ <a href="https://github.com/Leined18/Push_swap">push_swap</a></td>
-                    <td>2</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>🔗 <a href="https://github.com/Leined18/Minitalk">Minitalk</a></td>
-                    <td>2</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>🍴 <a href="https://github.com/Leined18/Philosophers">philosophers</a></td>
-                    <td>3</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">100</td>
-                </tr>
-                <tr>
-                    <td>🐚 <a href="https://github.com/Leined18/minishell">minishell</a></td>
-                    <td>3</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">125</td>
-                </tr>
-                <tr>
-                    <td>🤖 CPP Modules 00-09</td>
-                    <td>4</td>
-                    <td class="in-progress">In progress</td>
-                    <td class="score">-</td>
-                </tr>
-                <tr>
-                    <td>🖧 <a href="https://github.com/Leined18/Netpractice">NetPractice</a></td>
-                    <td>4</td>
-                    <td class="completed">Completed</td>
-                    <td class="score">100</td>
-                </tr>
-                <tr>
-                    <td>🔦 Cube3D</td>
-                    <td>4</td>
-                    <td class="pending">Pending</td>
-                    <td class="score">-</td>
-                </tr>
-            </table>
-        </div>
-    </main>
-    <script src="/static/js/header.js"></script>
-</body>
+  <h1 class="title"> 42 Projects</h1>
+  <p style="text-align: center">Estos son los proyectos que he completado en 42:</p>
+  <table class="proyect-table" id="project-table">
+    <tr>
+      <th>Project</th>
+      <th>Rank</th>
+      <th>Status</th>
+      <th>Score</th>
+      <script src="../static/js/projects.js"></script>
+      </tr>
+  </table>
+  </body>
 </html>
