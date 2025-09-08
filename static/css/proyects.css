@@ -1,0 +1,159 @@
+/* === Tabla principal === */
+.proyect-table {
+  width: 80%;
+  margin: 40px auto;
+  margin-bottom: 250px;
+  border-collapse: collapse;
+  background: #1e1b2e;
+  color: #e0d7f5;
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.proyect-table th,
+.proyect-table td {
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.proyect-table th {
+  background: #2a2540;
+  color: #bdaff7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.proyect-table tr:nth-child(even) {
+  background: #26203c;
+}
+
+.proyect-table tr:hover {
+  background: #342c50;
+  transition: 0.3s ease;
+}
+
+/* === Nombre del proyecto con el botón de opciones === */
+.project-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+
+.project-name a {
+  color: #cbb6ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-name a:hover {
+  text-decoration: underline;
+  color: #e1d1ff;
+}
+
+/* === Botón de opciones (hamburguesa) === */
+.options-btn {
+  border: none;
+  background: #3b2a64;
+  color: #e1d1ff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+
+.options-btn:hover {
+  background: #533c88;
+  transform: scale(1.1);
+}
+
+/* === Submenú elegante === */
+.submenu {
+    display: none;
+    position: fixed;
+    background: #2a2144;
+    border: 1px solid #4a3d6e;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 9999;
+    min-width: 180px;
+    padding: 6px 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.submenu.active {
+    display: block;
+    opacity: 1;
+}
+
+.submenu button {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    color: #e0d7f5;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+
+.submenu button:hover {
+    background: #3d2f66;
+}
+
+.back-btn {
+    font-weight: bold;
+    color: #ffcc70;
+}
+
+.back-btn:hover {
+    background: #4a356f;
+    color: #fff6d5;
+}
+
+
+.back-btn {
+  font-weight: bold;
+  color: #ffcc70;
+}
+
+.back-btn:hover {
+  background: #4a356f;
+  color: #fff6d5;
+}
+
+
+.submenu button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: #e0d7f5;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.submenu button:hover {
+  background: #3d2f66;
+}
+
+/* === Score, Status === */
+.score {
+  font-weight: bold;
+  color: #bdaff7;
+}
+
+.completed {
+  color: #7df

@@ -8,61 +8,85 @@
     <link href="/static/css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base */
         body {
-            background: #7678fff5;
+            background: linear-gradient(to right, #4b6cb7, #182848);
             font-family: 'Montserrat', Arial, sans-serif;
-            color: #1e2cad;
+            color: #ffffff;
             margin: 0;
             padding: 0;
         }
+
+        /* Section */
         .section {
-            max-width: 600px;
-            margin: 68px auto 0 auto;
-            background: #19115f9f;
-            border-radius: 19px;
-            box-shadow: 0 6px 32px rgba(22, 65, 109, 0.534);
-            padding: 40px 35px 35px 35px;
+            max-width: 700px;
+            margin: 80px auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
+
         .section h2 {
-            font-size: 2.2em;
+            font-size: 2.4em;
             font-weight: 700;
-            margin-bottom: 42px;
-            letter-spacing: 3px;
-            color: #4cb0df;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            color: #ffd700;
+            text-align: center;
         }
+
+        /* Table */
         table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 20px;
         }
+
         td {
-            background: linear-gradient(135deg, #86b3e7, #7560d1bd);
-            border-radius: 13px;
-            padding: 16px 10px 16px 24px;
-            font-size: 1.50em;
-            font-weight: 300;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 18px 20px;
+            font-size: 1.4em;
+            font-weight: 500;
             vertical-align: middle;
-            box-shadow: 0 3px 8px rgba(5, 48, 90, 0.377);
-            transition: box-shadow 0.3s;
-            width: 50%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
             display: inline-flex;
+            align-items: center;
         }
+
         td:hover {
-            box-shadow: 0 4px 16px rgba(44,62,80,0.10);
-            background: #eaf0f7;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
+
         i, img {
-            margin-right: 12px;
-            font-size: 1.5em;
+            margin-right: 14px;
+            font-size: 1.6em;
             vertical-align: middle;
         }
+
+        td[colspan="2"] {
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Responsive */
         @media (max-width: 600px) {
             .section {
-                padding: 20px 8px;
+                padding: 25px 15px;
             }
+
             td {
-                font-size: 1em;
-                padding: 12px 10px;
+                font-size: 1.1em;
+                padding: 12px 14px;
+            }
+
+            i, img {
+                font-size: 1.3em;
             }
         }
     </style>
@@ -90,7 +114,7 @@
                 <td><i class="fab fa-python" style="color:#3776ab"></i> Python</td>
             </tr>
             <tr>
-                <td colspan="2" style="text-align:center;">
+                <td colspan="2">
                     <i class="fab fa-git-alt" style="color:#f05032"></i> Git &amp; GitHub
                 </td>
             </tr>
