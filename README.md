@@ -14,7 +14,6 @@ Portafolio personal de **Danpalac** desplegado con GitHub Pages. El objetivo del
 │   ├── footer.html        # Parcial de footer configurable
 │   ├── header.html        # Parcial de navegación compartida
 │   ├── index.html
-│   ├── music.html
 │   ├── other-projects.html
 │   ├── skills.html
 │   └── stats.html
@@ -27,12 +26,10 @@ Portafolio personal de **Danpalac** desplegado con GitHub Pages. El objetivo del
 │   │   ├── proyects.css   # Ajustes puntuales de la tabla 42
 │   │   └── styles.css     # Agregador de los módulos anteriores
 │   ├── data/
-│   │   ├── music.json     # Feed local de la página de música
 │   │   └── projects.json  # Fuente de datos para 42 Projects
 │   └── js/
 │       ├── header.js      # Punto de entrada que inicializa los parciales
 │       ├── layout.js      # Loader de parciales (header/footer)
-│       ├── music.js       # Actualiza la última canción escuchada
 │       └── projects.js    # Render dinámico de la tabla de proyectos
 └── README.md
 ```
@@ -40,7 +37,7 @@ Portafolio personal de **Danpalac** desplegado con GitHub Pages. El objetivo del
 ## Puntos clave
 
 - **Layout modular**: separamos tokens, layout, componentes reutilizables y estilos por página para facilitar la evolución.
-- **Datos desacoplados**: los proyectos del cursus se gestionan desde `static/data/projects.json`, y la vista de música desde `static/data/music.json`.
+- **Datos desacoplados**: los proyectos del cursus se gestionan desde `static/data/projects.json`.
 - **Parciales reutilizables**: `portfolio/header.html` y `portfolio/footer.html` se inyectan dinámicamente mediante `static/js/layout.js`.
 - **Accesibilidad**: elementos con etiquetas semánticas, formularios etiquetados y estados de foco consistentes.
 
@@ -63,7 +60,7 @@ Portafolio personal de **Danpalac** desplegado con GitHub Pages. El objetivo del
 
 ## Próximos pasos
 
-1. Automatizar la carga de música y otros datos externos mediante APIs (Last.fm, Spotify).
+1. Exponer la integración musical como microservicio y enlazarlo desde el portafolio cuando esté listo.
 2. Añadir pruebas visuales (Percy, Playwright) para asegurar consistencia tras refactors.
 3. Documentar patrones de componentes con Storybook o estilo similar para el sistema de diseño.
 
