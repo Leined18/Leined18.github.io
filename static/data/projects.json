@@ -1,0 +1,178 @@
+[
+  {
+    "label": "📚 Libft",
+    "url": "https://github.com/Leined18/Libft",
+    "rank": 0,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "🖨️ ft_printf",
+    "url": "https://github.com/Leined18/ft_printf",
+    "rank": 1,
+    "status": "Completed",
+    "score": 100
+  },
+  {
+    "label": "📀 Born2beroot",
+    "rank": 1,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "📜 get_next_line",
+    "url": "https://github.com/Leined18/get_next_line",
+    "rank": 1,
+    "status": "Completed",
+    "score": 112
+  },
+  {
+    "label": "🎮 So_long",
+    "url": "https://github.com/Leined18/so_long",
+    "rank": 2,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "↹ Push_swap",
+    "url": "https://github.com/Leined18/Push_swap",
+    "rank": 2,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "🔗 Minitalk",
+    "url": "https://github.com/Leined18/Minitalk",
+    "rank": 2,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "🍴 Philosophers",
+    "url": "https://github.com/Leined18/Philosophers",
+    "rank": 3,
+    "status": "Completed",
+    "score": 100
+  },
+  {
+    "label": "🐚 Minishell",
+    "url": "https://github.com/Leined18/minishell",
+    "rank": 3,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+    "label": "🤖 CPP Modules 00-04",
+    "rank": 4,
+    "status": "Completed",
+    "score": null,
+    "subprojects": [
+      {
+        "label": "CPP 00",
+        "url": "https://github.com/Leined18/cpp-module-00",
+        "rank": 4,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 01",
+        "url": "https://github.com/Leined18/cpp-module-01",
+        "rank": 4,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 02",
+        "url": "https://github.com/Leined18/cpp-module-02",
+        "rank": 4,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 03",
+        "url": "https://github.com/Leined18/cpp-module-03",
+        "rank": 4,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 04",
+        "url": "https://github.com/Leined18/cpp-module-04",
+        "rank": 4,
+        "status": "Completed",
+        "score": 100
+      }
+    ]
+  },
+  {
+    "label": "🖧 NetPractice",
+    "url": "https://github.com/Leined18/Netpractice",
+    "rank": 4,
+    "status": "Completed",
+    "score": 100
+  },
+  {
+    "label": "🔦 Cube3D",
+    "url": "https://github.com/Leined18/Cube3D",
+    "rank": 4,
+    "status": "Completed",
+    "score": 125
+  },
+  {
+	"label": "🌐 Webserv",
+	"url": "",
+	"rank": 5,
+	"status": "in Progress",
+	"score": 0
+  },
+  {
+	"label": "🤖 CPP Modules 05-09",
+	"rank": 5,
+	"status": "in Progress",
+	"score": 0,
+	"subprojects": [
+	  {
+		"label": "CPP 05",
+		"url": "https:://github.com/Leined18/cpp-module-05",
+		"rank": 5,
+		"status": "Completed",
+		"score": 100
+	  },
+	  {
+		"label": "CPP 06",
+		"url": "https:://github.com/Leined18/cpp-module-06",
+		"rank": 5,
+		"status": "Completed",
+		"score": 100
+	  },
+	  {
+		"label": "CPP 07",
+		"url": "https:://github.com/Leined18/cpp-module-07",
+		"rank": 5,
+		"status": "in Progress",
+		"score": 0
+	  },
+	  {
+		"label": "CPP 08",
+		"url": "https:://github.com/Leined18/cpp-module-08",
+		"rank": 5,
+		"status": "in Progress",
+		"score": 0
+	  },
+	  {
+		"label": "CPP 09",
+		"url": "https:://github.com/Leined18/cpp-module-09",
+		"rank": 5,
+		"status": "in Progress",
+		"score": 0
+	  }
+	]
+  },
+  {
+	"label": "Inception",
+	"url": "",
+	"rank": 5,
+	"status": "in Progress",
+	"score": 0
+  }
+]

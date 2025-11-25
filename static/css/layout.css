@@ -1,0 +1,117 @@
+/* Shared layout primitives */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: block;
+}
+
+main,
+.container-primary {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.section-card {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem 2rem;
+  margin: 2.5rem auto;
+}
+
+.section-card h2,
+.section-card h1 {
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.header-banner {
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  text-align: center;
+  padding: 3rem 1rem 2.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.header-banner h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.header-banner p {
+  margin: 0.75rem 0 0;
+  color: var(--color-text-muted);
+}
+
+footer.site-footer {
+  margin-top: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: rgba(24, 26, 32, 0.94);
+  color: var(--color-text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer.site-footer img {
+  width: 88px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.28);
+  margin: 1rem auto 0;
+}
+
+.nav-shell {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+
+nav.primary-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 2.5rem);
+  padding: 1rem;
+  background: rgba(36, 37, 70, 0.85);
+  border-radius: var(--radius-lg);
+  width: min(900px, 94vw);
+  margin: 1.5rem auto 0;
+  box-shadow: var(--shadow-soft);
+}
+
+nav.primary-nav a {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+}
+
+nav.primary-nav a:hover,
+nav.primary-nav a:focus {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-primary-contrast);
+  transform: translateY(-2px);
+}
+
+nav.primary-nav a.active {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-primary-contrast);
+}
+
+.grid-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  nav.primary-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+}

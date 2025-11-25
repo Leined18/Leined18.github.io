@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>Music</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/pages/portfolio.css" rel="stylesheet">
 </head>
 <body>
+    <header class="header-banner">
+        <h1>🎧 Música</h1>
+        <p>Integración experimental con servicios de escucha en streaming</p>
+    </header>
+
     <div id="header-bar"></div>
-    <section class="section center">
-        <h2>🎧 Última canción escuchada</h2>
-        <div id="last-track">Cargando última canción escuchada...</div>
-    </section>
-    <script src="/static/js/header.js"></script>
+
+    <main class="container-primary">
+        <section class="section-card music-panel">
+            <h2>Última canción escuchada</h2>
+            <div id="last-track">Cargando última canción escuchada...</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Danpalac. Integraciones musicales en progreso.</p>
+    </footer>
+
+    <script src="../static/js/header.js"></script>
 </body>
 </html>

@@ -5,97 +5,21 @@
     <meta charset="UTF-8">
     <title>Skills</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/pages/portfolio.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base */
-        body {
-            background: linear-gradient(to right, #4b6cb7, #182848);
-            font-family: 'Montserrat', Arial, sans-serif;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Section */
-        .section {
-            max-width: 700px;
-            margin: 80px auto;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 50px 40px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .section h2 {
-            font-size: 2.4em;
-            font-weight: 700;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-            color: #ffd700;
-            text-align: center;
-        }
-
-        /* Table */
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 20px;
-        }
-
-        td {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 18px 20px;
-            font-size: 1.4em;
-            font-weight: 500;
-            vertical-align: middle;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        td:hover {
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        i, img {
-            margin-right: 14px;
-            font-size: 1.6em;
-            vertical-align: middle;
-        }
-
-        td[colspan="2"] {
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .section {
-                padding: 25px 15px;
-            }
-
-            td {
-                font-size: 1.1em;
-                padding: 12px 14px;
-            }
-
-            i, img {
-                font-size: 1.3em;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <header class="header-banner">
+        <h1>💡 Skills</h1>
+        <p>Matriz de habilidades técnica y herramientas de trabajo diarias</p>
+    </header>
+
     <div id="header-bar"></div>
-    <section class="section center">
-        <h2>💡 Skills</h2>
+    <main class="container-primary">
+    <section class="section-card">
+        <div class="skill-table">
         <table>
             <tr>
                 <td><i class="fab fa-html5" style="color:#e34c26"></i> HTML5</td>
@@ -119,8 +43,13 @@
                 </td>
             </tr>
         </table>
+        </div>
     </section>
-    <script src="/static/js/header.js"></script>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2025 Danpalac. Roadmap de habilidades en constante actualización.</p>
+    </footer>
+    <script src="../static/js/header.js"></script>
 </body>
 
 </html>

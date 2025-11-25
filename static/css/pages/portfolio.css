@@ -1,0 +1,136 @@
+/* Portfolio hub and detail pages */
+.portfolio-landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 4rem;
+}
+
+.portfolio-landing .intro {
+  text-align: center;
+  color: rgba(226, 232, 240, 0.92);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.portfolio-landing .card-grid {
+  margin-top: 3rem;
+  width: min(700px, 92vw);
+}
+
+.music-panel,
+.contact-panel {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.music-panel h2,
+.contact-panel h2 {
+  margin: 0;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(59, 130, 246, 0.12);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  color: var(--color-primary-contrast);
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.contact-item:hover,
+.contact-item:focus-within {
+  background: rgba(99, 102, 241, 0.24);
+  transform: translateY(-2px);
+}
+
+.contact-item span {
+  font-size: 1.5rem;
+}
+
+.contact-panel small {
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.stats-grid img {
+  width: min(520px, 100%);
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.45);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.form-inline {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-inline input[type="text"] {
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 23, 42, 0.6);
+  color: var(--color-primary-contrast);
+  min-width: 240px;
+}
+
+.form-inline button {
+  padding: 0.65rem 1.2rem;
+}
+
+.skill-table {
+  width: min(720px, 92vw);
+  margin: 0 auto;
+}
+
+.skill-table td {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.28);
+}
+
+.skill-table td:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.35);
+}
+
+@media (max-width: 620px) {
+  .skill-table td {
+    font-size: 1rem;
+  }
+}
+
+.section-card p:first-of-type {
+  margin-top: 0;
+}

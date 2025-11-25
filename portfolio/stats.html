@@ -4,50 +4,39 @@
     <meta charset="UTF-8">
     <title>Estadísticas de GitHub</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/css/styles.css" rel="stylesheet">
-    <style>
-        .center {
-            text-align: center;
-        }
-        .stats img {
-            width: 45%;
-            margin: 10px;
-        }
-        #userForm {
-            margin: 20px 0;
-        }
-        #username {
-            padding: 8px;
-            font-size: 1em;
-        }
-        button {
-            padding: 8px 12px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-    </style>
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/pages/portfolio.css" rel="stylesheet">
 </head>
 <body>
-    <div id="header-bar"></div>
-    <div class="container center">
+    <header class="header-banner">
         <h1>Estadísticas de GitHub</h1>
+        <p>Visualización interactiva de actividad y lenguajes principales</p>
+    </header>
 
-        <!-- Formulario para ingresar usuario -->
-        <form id="userForm">
-            <input type="text" id="username" placeholder="Usuario de GitHub" required>
-            <button type="submit">Ver estadísticas</button>
-        </form>
+    <div id="header-bar"></div>
 
-        <!-- Estadísticas de GitHub -->
-        <div class="stats" id="stats">
-            <h2>📊 GitHub Stats</h2>
-            <img id="stats-main" src="https://github-readme-stats.vercel.app/api?username=Leined18&theme=tokyonight&show_icons=true&count_private=true" alt="GitHub stats">
-            <img id="stats-streak" src="https://github-readme-streak-stats.herokuapp.com/?user=Leined18&theme=tokyonight" alt="GitHub streak stats">
-            <img id="stats-langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Leined18&theme=tokyonight&layout=compact" alt="Top languages">
-        </div>
-    </div>
+    <main class="container-primary">
+        <section class="section-card">
+            <form id="userForm" class="form-inline" aria-labelledby="stats-title">
+                <label for="username" class="visually-hidden">Usuario de GitHub</label>
+                <input type="text" id="username" name="username" placeholder="Usuario de GitHub" required>
+                <button type="submit" class="btn-secondary">Ver estadísticas</button>
+            </form>
 
-    <script src="/static/js/header.js"></script>
+            <div class="stats-grid" id="stats">
+                <h2 id="stats-title">📊 GitHub Stats</h2>
+                <img id="stats-main" src="https://github-readme-stats.vercel.app/api?username=Leined18&theme=tokyonight&show_icons=true&count_private=true" alt="Resumen de GitHub" loading="lazy">
+                <img id="stats-streak" src="https://github-readme-streak-stats.herokuapp.com/?user=Leined18&theme=tokyonight" alt="Racha de commits" loading="lazy">
+                <img id="stats-langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Leined18&theme=tokyonight&layout=compact" alt="Lenguajes más utilizados" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Danpalac. Estadísticas generadas vía servicios comunitarios.</p>
+    </footer>
+
+    <script src="../static/js/header.js"></script>
     <script>
         document.getElementById("userForm").addEventListener("submit", function(e) {
             e.preventDefault();

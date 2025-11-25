@@ -4,52 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Other Projects</title>
-    <link href="/static/css/styles.css" rel="stylesheet">
-    <style>
-        .section {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .project-table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: auto;
-        }
-        .project-table th {
-            padding: 10px 20px;
-            font-size: 1.1em;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-        footer img {
-            width: 200px;
-            border-radius: 10px;
-        }
-    </style>
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/pages/portfolio.css" rel="stylesheet">
 </head>
 <body>
+    <header class="header-banner">
+        <h1>Otros Proyectos</h1>
+        <p>Selección de trabajos paralelos para explorar ideas nuevas</p>
+    </header>
+
     <div id="header-bar"></div>
 
-    <!-- Sección de proyectos -->
-    <section class="section">
-        <h2>🐱 Other Projects</h2>
-        <p>Aquí otros proyectos destacados.</p>
+    <main class="container-primary">
+        <section class="section-card">
+            <h2>🐱 Other Projects</h2>
+            <p class="center-text">Iniciativas personales y prototipos rápidos que amplían el stack más allá del cursus.</p>
+            <div class="table-shell">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Repositorio</th>
+                            <th scope="col">Descripción breve</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://github.com/Leined18/1-game" target="_blank" rel="noopener noreferrer">1-game</a></td>
+                            <td>Juego arcade en C con motor propio simplificado.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://github.com/Leined18/2-game" target="_blank" rel="noopener noreferrer">2-game</a></td>
+                            <td>Experimento multijugador local con enfoque en IA básica.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://github.com/Leined18/memtrack" target="_blank" rel="noopener noreferrer">memtrack</a></td>
+                            <td>Herramienta para inspeccionar memoria y detectar leaks en tiempo real.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-        <table class="project-table">
-            <thead>
-                <tr>
-                    <th><a href="https://github.com/Leined18/1-game" target="_blank">1-game</a></th>
-                    <th><a href="https://github.com/Leined18/2-game" target="_blank">2-game</a></th>
-                    <th><a href="https://github.com/Leined18/memtrack" target="_blank">memtrack</a></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Si quieres agregar más info por fila, puedes hacerlo aquí -->
-            </tbody>
-        </table>
-    </section>
-    <script src="/static/js/header.js"></script>
+    <footer class="site-footer">
+        <p>&copy; 2025 Danpalac. Proyectos en iteración constante.</p>
+    </footer>
+
+    <script src="../static/js/header.js"></script>
 </body>
 </html>

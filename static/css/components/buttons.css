@@ -1,0 +1,49 @@
+/* Reusable button styles */
+.button,
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-primary-contrast);
+  box-shadow: 0 4px 16px rgba(80, 130, 255, 0.18);
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(80, 130, 255, 0.24);
+}
+
+.btn-secondary {
+  background: rgba(36, 37, 70, 0.9);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: var(--color-primary-contrast);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.button--icon-only {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
