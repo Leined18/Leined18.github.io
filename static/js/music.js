@@ -6,14 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const feedUrl = container.dataset.musicFeed || '../static/data/music.json';
     const endpoint = new URL(feedUrl, document.baseURI);
+    const remoteEndpoint = 'https://raw.githubusercontent.com/Leined18/Leined18.github.io/main/static/data/music.json';
 
-    fetch(endpoint.toString())
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Unable to load music feed: ${response.status}`);
-            }
-            return response.json();
-        })
+    loadMusicFeed([endpoint.toString(), remoteEndpoint])
         .then((payload) => {
             renderLastTrack(container, payload);
         })
@@ -22,6 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
             container.textContent = 'No se pudo obtener la última canción escuchada.';
         });
 });
+
+function loadMusicFeed(candidates) {
+    if (!Array.isArray(candidates) || candidates.length === 0) {
+        return Promise.reject(new Error('No hay feeds configurados.'));
+    }
+
+    const [current, ...rest] = candidates;
+
+    return fetch(current)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Unable to load music feed: ${response.status}`);
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            if (rest.length === 0) {
+                throw error;
+            }
+            return loadMusicFeed(rest);
+        });
+}
 
 function renderLastTrack(container, payload) {
     if (!payload || !Array.isArray(payload.recentTracks) || payload.recentTracks.length === 0) {

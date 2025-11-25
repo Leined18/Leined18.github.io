@@ -51,8 +51,9 @@ Portafolio personal de **Danpalac** desplegado con GitHub Pages. El objetivo del
 	```bash
 	npm install
 	```
-3. Abre `index.html` o cualquier archivo dentro de `portfolio/` directamente en el navegador (no requiere build).
-4. Para emular GitHub Pages en otra carpeta, respeta las rutas relativas (no utilices `/ruta/absoluta`).
+3. Para que los parciales y fuentes de datos carguen sin depender del fallback remoto, levanta un servidor local sencillo (por ejemplo, `npx serve` o `python -m http.server`) y navega a `http://localhost:PORT`.
+4. Si prefieres abrir `index.html` directamente desde el sistema de archivos, el sitio seguirá funcionando pero recurrirá al contenido hospedado en GitHub Raw como respaldo.
+5. Para emular GitHub Pages en otra carpeta, respeta las rutas relativas (no utilices `/ruta/absoluta`).
 
 ## Validaciones disponibles
 

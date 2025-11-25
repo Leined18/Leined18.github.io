@@ -6,14 +6,9 @@
 
 	const tbody = table.querySelector('tbody') || table.appendChild(document.createElement('tbody'));
 	const dataUrl = new URL('../static/data/projects.json', document.baseURI);
+	const remoteUrl = 'https://raw.githubusercontent.com/Leined18/Leined18.github.io/main/static/data/projects.json';
 
-	fetch(dataUrl.toString())
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error(`Unable to load project data: ${res.status}`);
-			}
-			return res.json();
-		})
+	loadProjectData([dataUrl.toString(), remoteUrl])
 		.then((payload) => {
 			if (!Array.isArray(payload)) {
 				throw new Error('El formato de projects.json no es válido.');
@@ -27,6 +22,28 @@
 			renderFallback(tbody);
 		});
 })();
+
+function loadProjectData(candidates) {
+	if (!Array.isArray(candidates) || candidates.length === 0) {
+		return Promise.reject(new Error('No hay fuentes de datos configuradas.'));
+	}
+
+	const [current, ...rest] = candidates;
+
+	return fetch(current)
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error(`Unable to load project data: ${res.status}`);
+			}
+			return res.json();
+		})
+		.catch((error) => {
+			if (rest.length === 0) {
+				throw error;
+			}
+			return loadProjectData(rest);
+		});
+}
 
 function buildRow(project) {
 	const row = document.createElement('tr');
