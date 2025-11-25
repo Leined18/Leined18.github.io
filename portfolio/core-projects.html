@@ -14,7 +14,7 @@
     <p>Progresión en el cursus 42 Madrid, con subproyectos y puntuaciones</p>
   </header>
 
-  <div id="header-bar"></div>
+  <div data-partial="./header.html" data-role="navigation"></div>
 
   <main class="projects-page">
     <section class="section-card">
@@ -36,10 +36,9 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Danpalac. Datos sincronizados manualmente tras cada milestone.</p>
-  </footer>
+  <div data-partial="./footer.html" data-role="footer" data-footer-text="&copy; 2025 Danpalac. Datos sincronizados manualmente tras cada milestone."></div>
 
+  <script src="../static/js/layout.js"></script>
   <script src="../static/js/header.js"></script>
   <script src="../static/js/projects.js"></script>
 </body>

@@ -13,7 +13,7 @@
     <p>Portafolio técnico, retos 42 y proyectos personales</p>
   </header>
 
-  <div id="header-bar"></div>
+  <div data-partial="./header.html" data-role="navigation"></div>
 
   <main class="portfolio-landing">
     <div class="badge-stack" aria-label="Indicadores de actividad en GitHub">
@@ -48,11 +48,9 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <img src="../assets/fox.jpeg" alt="Ilustración de zorro" loading="lazy" />
-    <p>&copy; 2025 Danpalac. Portafolio actualizado continuamente.</p>
-  </footer>
+  <div data-partial="./footer.html" data-role="footer" data-footer-image="../assets/fox.jpeg" data-footer-image-alt="Ilustración de zorro" data-footer-text="&copy; 2025 Danpalac. Portafolio actualizado continuamente."></div>
 
+  <script src="../static/js/layout.js"></script>
   <script src="../static/js/header.js"></script>
 </body>
 </html>

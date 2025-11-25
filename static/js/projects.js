@@ -1,302 +1,193 @@
-class Project {
-    constructor(name, link, rank, status, score, subprojects = []) {
-        this.name = name;
-        this.link = link;
-        this.rank = rank;
-        this.status = status;
-        this.score = score;
-        this.subprojects = subprojects;
-    }
+(() => {
+	const table = document.querySelector('[data-project-table]');
+	if (!table) {
+		return;
+	}
 
-    toRow() {
-        const tr = document.createElement("tr");
+	const tbody = table.querySelector('tbody') || table.appendChild(document.createElement('tbody'));
+	const dataUrl = new URL('../static/data/projects.json', document.baseURI);
 
-        const tdName = document.createElement("td");
-        tdName.classList.add("project-name");
+	fetch(dataUrl.toString())
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error(`Unable to load project data: ${res.status}`);
+			}
+			return res.json();
+		})
+		.then((payload) => {
+			if (!Array.isArray(payload)) {
+				throw new Error('El formato de projects.json no es válido.');
+			}
+			payload.forEach((project) => {
+				tbody.appendChild(buildRow(project));
+			});
+		})
+		.catch((error) => {
+			console.error(error);
+			renderFallback(tbody);
+		});
+})();
 
-        const nameSpan = document.createElement("span");
-        nameSpan.innerHTML = this.link
-            ? `<a href="${this.link}" target="_blank">${this.name}</a>`
-            : this.name;
-        tdName.appendChild(nameSpan);
+function buildRow(project) {
+	const row = document.createElement('tr');
 
-        // Rank, Status, Score
-        const tdRank = document.createElement("td");
-        tdRank.textContent = this.rank;
+	const nameCell = document.createElement('td');
+	nameCell.className = 'project-name';
 
-        const tdStatus = document.createElement("td");
-        tdStatus.textContent = this.status;
-        tdStatus.classList.add(this.status.toLowerCase().replace(" ", "-"));
+	const rankCell = document.createElement('td');
+	rankCell.textContent = formatValue(project.rank);
 
-        const tdScore = document.createElement("td");
-        tdScore.textContent = this.score;
-        tdScore.classList.add("score");
+	const statusCell = document.createElement('td');
+	statusCell.appendChild(buildStatus(project.status));
 
-        // Subproyectos
-        if (this.subprojects.length > 0) {
-            const optionsBtn = document.createElement("button");
-            optionsBtn.textContent = "≡";
-            optionsBtn.classList.add("options-btn");
+	const scoreCell = document.createElement('td');
+	scoreCell.textContent = formatValue(project.score);
+	scoreCell.classList.toggle('score-boost', typeof project.score === 'number' && project.score >= 120);
 
-            const submenu = document.createElement("div");
-            submenu.classList.add("submenu");
+	const labelEl = buildProjectLabel(project);
+	nameCell.appendChild(labelEl);
 
-            const backBtn = document.createElement("button");
-            backBtn.textContent = "⬅ Volver al principal";
-            backBtn.style.display = "none";
-            submenu.appendChild(backBtn);
+	if (Array.isArray(project.subprojects) && project.subprojects.length > 0) {
+		nameCell.appendChild(buildOptionsMenu(project, { labelEl, rankCell, statusCell, scoreCell }));
+	}
 
-            this.subprojects.forEach(sub => {
-                const subBtn = document.createElement("button");
-                subBtn.textContent = sub.name;
-                subBtn.addEventListener("click", () => {
-                    nameSpan.innerHTML = sub.link
-                        ? `<a href="${sub.link}" target="_blank">${sub.name}</a>`
-                        : sub.name;
-                    tdRank.textContent = sub.rank;
-                    tdStatus.textContent = sub.status;
-                    tdStatus.className = sub.status.toLowerCase().replace(" ", "-");
-                    tdScore.textContent = sub.score;
+	row.appendChild(nameCell);
+	row.appendChild(rankCell);
+	row.appendChild(statusCell);
+	row.appendChild(scoreCell);
 
-                    backBtn.style.display = "block";
-                });
-                submenu.appendChild(subBtn);
-            });
-
-            backBtn.addEventListener("click", () => {
-                nameSpan.innerHTML = this.link
-                    ? `<a href="${this.link}" target="_blank">${this.name}</a>`
-                    : this.name;
-                tdRank.textContent = this.rank;
-                tdStatus.textContent = this.status;
-                tdStatus.className = this.status.toLowerCase().replace(" ", "-");
-                tdScore.textContent = this.score;
-
-                backBtn.style.display = "none";
-            });
-
-            tdName.appendChild(optionsBtn);
-            tdName.appendChild(submenu);
-
-            optionsBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                const rect = optionsBtn.getBoundingClientRect();
-                const submenuHeight = submenu.scrollHeight;
-                const spaceBelow = window.innerHeight - rect.bottom;
-                const topPosition = spaceBelow < submenuHeight ? rect.top - submenuHeight : rect.bottom;
-                submenu.style.top = topPosition + "px";
-                submenu.style.left = rect.left + rect.width / 2 + "px";
-                submenu.style.transform = "translateX(-50%)";
-                submenu.classList.toggle("active");
-            });
-
-            document.addEventListener("click", (e) => {
-                if (!tdName.contains(e.target)) {
-                    submenu.classList.remove("active");
-                }
-            });
-        }
-
-        tr.appendChild(tdName);
-        tr.appendChild(tdRank);
-        tr.appendChild(tdStatus);
-        tr.appendChild(tdScore);
-
-        return tr;
-    }
+	return row;
 }
 
-// Lista de proyectos (fuera de la clase)
-const projects = [
-    new Project("📚 Libft", "https://github.com/Leined18/Libft", 0, "Completed", 125),
-    new Project("🖨️ ft_printf", "https://github.com/Leined18/ft_printf", 1, "Completed", 100),
-    new Project("📀 Born2beroot", "", 1, "Completed", 125),
-    new Project("📜 get_next_line", "https://github.com/Leined18/get_next_line", 1, "Completed", 112),
-    new Project("🎮 So_long", "https://github.com/Leined18/so_long", 2, "Completed", 125),
-    new Project("↹ Push_swap", "https://github.com/Leined18/Push_swap", 2, "Completed", 125),
-    new Project("🔗 Minitalk", "https://github.com/Leined18/Minitalk", 2, "Completed", 125),
-    new Project("🍴 Philosophers", "https://github.com/Leined18/Philosophers", 3, "Completed", 100),
-    new Project("🐚 Minishell", "https://github.com/Leined18/minishell", 3, "Completed", 125),
-    new Project("🤖 CPP Modules 00-04", "", 4, "Completed", "-", [
-        new Project("CPP 00", "https://github.com/Leined18/cpp-module-00", 4, "Completed", 100),
-        new Project("CPP 01", "https://github.com/Leined18/cpp-module-01", 4, "Completed", 100),
-        new Project("CPP 02", "https://github.com/Leined18/cpp-module-02", 4, "Completed", 100),
-        new Project("CPP 03", "https://github.com/Leined18/cpp-module-03", 4, "Completed", 100),
-        new Project("CPP 04", "https://github.com/Leined18/cpp-module-04", 4, "Completed", 100),
-    ]),
-    new Project("🖧 NetPractice", "https://github.com/Leined18/Netpractice", 4, "Completed", 100),
-    new Project("🔦 Cube3D", "https://github.com/Leined18/Cube3D", 4, "Completed", 125),
-    (() => {
-        const table = document.querySelector('[data-project-table]');
-        if (!table) {
-            return;
-        }
+function buildProjectLabel(project) {
+	const wrapper = document.createElement('span');
+	wrapper.className = 'project-label';
+	updateProjectLabel(wrapper, project);
+	return wrapper;
+}
 
-        const tbody = table.querySelector('tbody') || table.appendChild(document.createElement('tbody'));
-        const DATA_URL = new URL('../static/data/projects.json', document.baseURI);
+function buildStatus(status) {
+	const normalized = normalizeStatus(status);
+	const pill = document.createElement('span');
+	pill.className = `status-pill status--${normalized.slug}`;
+	pill.textContent = normalized.label;
+	return pill;
+}
 
-        fetch(DATA_URL.toString())
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`Unable to load project data: ${res.status}`);
-                }
-                return res.json();
-            })
-            .then((projects) => {
-                if (!Array.isArray(projects)) {
-                    throw new Error('El formato de projects.json no es válido.');
-                }
-                projects.forEach((project) => {
-                    tbody.appendChild(buildRow(project));
-                });
-            })
-            .catch((error) => {
-                console.error(error);
-                renderFallback(tbody);
-            });
-    })();
+function buildOptionsMenu(project, context) {
+	const wrapper = document.createElement('div');
+	wrapper.className = 'options-menu';
 
-    function buildRow(project) {
-        const row = document.createElement('tr');
+	const toggle = document.createElement('button');
+	toggle.type = 'button';
+	toggle.setAttribute('aria-haspopup', 'true');
+	toggle.setAttribute('aria-expanded', 'false');
+	toggle.textContent = '≡';
 
-        const nameCell = document.createElement('td');
-        nameCell.className = 'project-name';
+	const panel = document.createElement('div');
+	panel.className = 'options-panel';
 
-        const rankCell = document.createElement('td');
-        rankCell.textContent = project.rank ?? '—';
+	const backButton = document.createElement('button');
+	backButton.type = 'button';
+	backButton.className = 'back-btn';
+	backButton.textContent = '⬅ Volver al principal';
+	backButton.addEventListener('click', () => {
+		resetPrimary(project, context);
+		collapsePanel(panel, toggle);
+	});
 
-        const statusCell = document.createElement('td');
-        statusCell.appendChild(buildStatus(project.status));
+	panel.appendChild(backButton);
 
-        const scoreCell = document.createElement('td');
-        scoreCell.textContent = project.score ?? '—';
-        if (typeof project.score === 'number' && project.score >= 120) {
-            scoreCell.classList.add('score-boost');
-        }
+	project.subprojects.forEach((sub) => {
+		const option = document.createElement('button');
+		option.type = 'button';
+		option.textContent = sub.label;
+		option.addEventListener('click', () => {
+			swapProject(sub, context);
+			collapsePanel(panel, toggle);
+		});
+		panel.appendChild(option);
+	});
 
-        const labelEl = buildProjectLabel(project);
-        nameCell.appendChild(labelEl);
+	toggle.addEventListener('click', (event) => {
+		event.stopPropagation();
+		const isActive = panel.classList.toggle('active');
+		toggle.setAttribute('aria-expanded', String(isActive));
+	});
 
-        if (Array.isArray(project.subprojects) && project.subprojects.length > 0) {
-            nameCell.appendChild(buildOptionsMenu(project, { labelEl, rankCell, statusCell, scoreCell }));
-        }
+	document.addEventListener('click', (event) => {
+		if (!wrapper.contains(event.target)) {
+			collapsePanel(panel, toggle);
+		}
+	});
 
-        row.appendChild(nameCell);
-        row.appendChild(rankCell);
-        row.appendChild(statusCell);
-        row.appendChild(scoreCell);
+	wrapper.appendChild(toggle);
+	wrapper.appendChild(panel);
 
-        return row;
-    }
+	return wrapper;
+}
 
-    function buildProjectLabel(project) {
-        const wrapper = document.createElement('span');
-        wrapper.className = 'project-label';
-        updateProjectLabel(wrapper, project);
-        return wrapper;
-    }
+function swapProject(candidate, context) {
+	const { labelEl, rankCell, statusCell, scoreCell } = context;
+	updateProjectLabel(labelEl, candidate);
 
-    function buildStatus(status) {
-        const pill = document.createElement('span');
-        const normalized = (status || 'Pending').toLowerCase().replace(/\s+/g, '-');
-        pill.className = `status-pill status--${normalized}`;
-        pill.textContent = status || 'Pending';
-        return pill;
-    }
+	rankCell.textContent = formatValue(candidate.rank);
+	statusCell.innerHTML = '';
+	statusCell.appendChild(buildStatus(candidate.status));
 
-    function buildOptionsMenu(project, context) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'options-menu';
+	scoreCell.textContent = formatValue(candidate.score);
+	scoreCell.classList.toggle('score-boost', typeof candidate.score === 'number' && candidate.score >= 120);
+}
 
-        const toggle = document.createElement('button');
-        toggle.type = 'button';
-        toggle.setAttribute('aria-haspopup', 'true');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '≡';
+function resetPrimary(project, context) {
+	swapProject(project, context);
+}
 
-        const panel = document.createElement('div');
-        panel.className = 'options-panel';
+function updateProjectLabel(wrapper, project) {
+	wrapper.innerHTML = '';
+	const label = project.label || 'Proyecto';
+	if (project.url) {
+		const link = document.createElement('a');
+		link.href = project.url;
+		link.target = '_blank';
+		link.rel = 'noopener noreferrer';
+		link.textContent = label;
+		wrapper.appendChild(link);
+	} else {
+		const span = document.createElement('span');
+		span.textContent = label;
+		wrapper.appendChild(span);
+	}
+}
 
-        const backButton = document.createElement('button');
-        backButton.type = 'button';
-        backButton.className = 'back-btn';
-        backButton.textContent = '⬅ Volver al principal';
-        backButton.addEventListener('click', () => {
-            resetPrimary(project, context);
-            panel.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
-        });
+function formatValue(value) {
+	if (value === null || value === undefined || value === '') {
+		return '—';
+	}
+	return value;
+}
 
-        panel.appendChild(backButton);
+function normalizeStatus(status) {
+	const raw = String(status || 'Pending').trim();
+	const slug = raw.toLowerCase().replace(/\s+/g, '-');
+	const label = raw
+		.toLowerCase()
+		.split(' ')
+		.map((fragment) => fragment.charAt(0).toUpperCase() + fragment.slice(1))
+		.join(' ');
+	return { slug, label };
+}
 
-        project.subprojects.forEach((sub) => {
-            const option = document.createElement('button');
-            option.type = 'button';
-            option.textContent = sub.label;
-            option.addEventListener('click', () => {
-                swapProject(sub, context);
-                panel.classList.remove('active');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-            panel.appendChild(option);
-        });
+function collapsePanel(panel, toggle) {
+	panel.classList.remove('active');
+	toggle.setAttribute('aria-expanded', 'false');
+}
 
-        toggle.addEventListener('click', (evt) => {
-            evt.stopPropagation();
-            const isActive = panel.classList.toggle('active');
-            toggle.setAttribute('aria-expanded', String(isActive));
-        });
-
-        document.addEventListener('click', (evt) => {
-            if (!wrapper.contains(evt.target)) {
-                panel.classList.remove('active');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        wrapper.appendChild(toggle);
-        wrapper.appendChild(panel);
-
-        return wrapper;
-    }
-
-    function swapProject(candidate, context) {
-        const { labelEl, rankCell, statusCell, scoreCell } = context;
-        updateProjectLabel(labelEl, candidate);
-
-        rankCell.textContent = candidate.rank ?? '—';
-        statusCell.innerHTML = '';
-        statusCell.appendChild(buildStatus(candidate.status));
-
-        scoreCell.textContent = candidate.score ?? '—';
-        scoreCell.classList.toggle('score-boost', typeof candidate.score === 'number' && candidate.score >= 120);
-    }
-
-    function resetPrimary(project, context) {
-        swapProject(project, context);
-    }
-
-    function renderFallback(container) {
-        const row = document.createElement('tr');
-        const cell = document.createElement('td');
-        cell.colSpan = 4;
-        cell.textContent = 'No se pudieron cargar los proyectos en este momento.';
-        row.appendChild(cell);
-        container.appendChild(row);
-    }
-
-    function updateProjectLabel(wrapper, project) {
-        wrapper.innerHTML = '';
-        if (project.url) {
-            const link = document.createElement('a');
-            link.href = project.url;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.textContent = project.label;
-            wrapper.appendChild(link);
-        } else {
-            const span = document.createElement('span');
-            span.textContent = project.label;
-            wrapper.appendChild(span);
-        }
-    }
+function renderFallback(container) {
+	const row = document.createElement('tr');
+	const cell = document.createElement('td');
+	cell.colSpan = 4;
+	cell.textContent = 'No se pudieron cargar los proyectos en este momento.';
+	row.appendChild(cell);
+	container.appendChild(row);
+}

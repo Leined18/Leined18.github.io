@@ -119,60 +119,60 @@
     "score": 125
   },
   {
-	"label": "🌐 Webserv",
-	"url": "",
-	"rank": 5,
-	"status": "in Progress",
-	"score": 0
+    "label": "🌐 Webserv",
+    "url": "",
+    "rank": 5,
+    "status": "In Progress",
+    "score": 0
   },
   {
-	"label": "🤖 CPP Modules 05-09",
-	"rank": 5,
-	"status": "in Progress",
-	"score": 0,
-	"subprojects": [
-	  {
-		"label": "CPP 05",
-		"url": "https:://github.com/Leined18/cpp-module-05",
-		"rank": 5,
-		"status": "Completed",
-		"score": 100
-	  },
-	  {
-		"label": "CPP 06",
-		"url": "https:://github.com/Leined18/cpp-module-06",
-		"rank": 5,
-		"status": "Completed",
-		"score": 100
-	  },
-	  {
-		"label": "CPP 07",
-		"url": "https:://github.com/Leined18/cpp-module-07",
-		"rank": 5,
-		"status": "in Progress",
-		"score": 0
-	  },
-	  {
-		"label": "CPP 08",
-		"url": "https:://github.com/Leined18/cpp-module-08",
-		"rank": 5,
-		"status": "in Progress",
-		"score": 0
-	  },
-	  {
-		"label": "CPP 09",
-		"url": "https:://github.com/Leined18/cpp-module-09",
-		"rank": 5,
-		"status": "in Progress",
-		"score": 0
-	  }
-	]
+    "label": "🤖 CPP Modules 05-09",
+    "rank": 5,
+    "status": "In Progress",
+    "score": 0,
+    "subprojects": [
+      {
+        "label": "CPP 05",
+        "url": "https://github.com/Leined18/cpp-module-05",
+        "rank": 5,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 06",
+        "url": "https://github.com/Leined18/cpp-module-06",
+        "rank": 5,
+        "status": "Completed",
+        "score": 100
+      },
+      {
+        "label": "CPP 07",
+        "url": "https://github.com/Leined18/cpp-module-07",
+        "rank": 5,
+        "status": "In Progress",
+        "score": 0
+      },
+      {
+        "label": "CPP 08",
+        "url": "https://github.com/Leined18/cpp-module-08",
+        "rank": 5,
+        "status": "In Progress",
+        "score": 0
+      },
+      {
+        "label": "CPP 09",
+        "url": "https://github.com/Leined18/cpp-module-09",
+        "rank": 5,
+        "status": "In Progress",
+        "score": 0
+      }
+    ]
   },
   {
-	"label": "Inception",
-	"url": "",
-	"rank": 5,
-	"status": "in Progress",
-	"score": 0
+    "label": "Inception",
+    "url": "",
+    "rank": 5,
+    "status": "In Progress",
+    "score": 0
   }
 ]
