@@ -1,0 +1,89 @@
+
+{
+  "skills": [
+    {
+      "id": "html",
+      "name": "HTML5",
+      "items": []
+    },
+    {
+      "id": "css",
+      "name": "CSS3",
+      "items": []
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "items": []
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "items": []
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "items": []
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "items": []
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "items": []
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "items": []
+    },
+    {
+      "id": "solid",
+      "name": "SOLID",
+      "items": []
+    },
+    {
+      "id": "ai",
+      "name": "AI",
+      "items": []
+    },
+    {
+      "id": "hyperfocus",
+      "name": "Hyperfocus",
+      "items": []
+    },
+    {
+      "id": "git",
+      "name": "Git & GitHub",
+      "items": []
+    },
+    {
+      "id": "databases",
+      "name": "Databases",
+      "items": [
+        {
+          "name": "MariaDB",
+          "link": "https://mariadb.org/",
+          "logoLink": null,
+          "color": "#3498db"
+        },
+        {
+          "name": "MySQL",
+          "link": "https://www.mysql.com/",
+          "logoLink": null,
+          "color": "#3498db"
+        },
+        {
+          "name": "MongoDB",
+          "link": "https://www.mongodb.com/",
+          "logoLink": null,
+          "color": "#3498db"
+        }
+      ]
+    }
+  ]
+}

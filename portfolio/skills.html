@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +23,7 @@
 
     <header class="header-banner">
         <h1>💡 Skills</h1>
-        <p>Matriz de habilidades técnicas y herramientas de trabajo diarias</p>
+        <p>Matriz de habilidades técnica y herramientas de trabajo diarias</p>
     </header>
 
     <div data-partial="./header.html" data-role="navigation"></div>
@@ -33,67 +34,76 @@
 
             <div class="skills-grid">
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="html">
                     <i class="fab fa-html5" style="color:#e34c26"></i>
                     <span>HTML5</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="css">
                     <i class="fab fa-css3-alt" style="color:#1572b6"></i>
                     <span>CSS3</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="c">
                     <i class="devicon-c-plain colored"></i>
                     <span>C</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="cpp">
                     <i class="devicon-cplusplus-plain colored"></i>
                     <span>C++</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="javascript">
                     <i class="fab fa-js-square" style="color:#f7df1e"></i>
                     <span>JavaScript</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="python">
                     <i class="fab fa-python" style="color:#3776ab"></i>
                     <span>Python</span>
                 </div>
 
-                <div class="skill-item">
-                    <i class="devicon-java-original colored"></i>
+                <div class="skill-item" data-skill-id="java">
+                    <i class="devicon-java-plain colored"></i>
                     <span>Java</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="docker">
                     <i class="devicon-docker-plain colored"></i>
                     <span>Docker</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="solid">
                     <i class="fas fa-cubes" style="color:#8e44ad"></i>
                     <span>SOLID</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="ai">
                     <i class="fas fa-brain" style="color:#00bcd4"></i>
                     <span>AI</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="hyperfocus">
                     <i class="fas fa-bullseye" style="color:#e67e22"></i>
                     <span>Hyperfocus</span>
                 </div>
 
-                <div class="skill-item">
+                <div class="skill-item" data-skill-id="git">
                     <i class="fab fa-git-alt" style="color:#f05032"></i>
                     <span>Git &amp; GitHub</span>
                 </div>
 
+                <div class="skill-item" data-skill-id="databases">
+                    <i class="fas fa-database" style="color:#3498db"></i>
+                    <span>Databases</span>
+                </div>
+
             </div>
+
+            <!-- El JavaScript insertará aquí el módulo de información -->
+
+            <div id="skill-details" aria-live="polite"></div>
 
         </section>
 
@@ -106,6 +116,9 @@
 
     <script src="../static/js/layout.js"></script>
     <script src="../static/js/header.js"></script>
+
+    <!-- Módulo de habilidades -->
+    <script type="module" src="../static/js/skills.js"></script>
 
 </body>
 </html>
